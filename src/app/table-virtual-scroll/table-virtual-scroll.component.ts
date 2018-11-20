@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import {ArrayDataSource, CollectionViewer, DataSource, ListRange} from '@angular/cdk/collections';
 import {CdkVirtualScrollViewport} from '@angular/cdk/scrolling';
 
 @Component({

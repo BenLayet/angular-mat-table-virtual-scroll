@@ -143,6 +143,7 @@ export class CdkVirtualScrollViewport extends CdkScrollable implements OnInit, O
     // ourselves instead.
     this.ngZone.runOutsideAngular(() => Promise.resolve().then(() => {
       this._measureViewportSize();
+      this._scrollStrategy.attach(this);
 
       this.elementScrolled()
           .pipe(

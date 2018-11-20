@@ -1,0 +1,21 @@
+
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <div *cdkTableVirtualFor="let item of items" class="example-item">{{item.name}}</div>
+</cdk-virtual-scroll-viewport>
+
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <table cdk-table [dataSource]="renderedItems"  >
+  <ng-container cdkColumnDef="number">
+    <th cdk-header-cell *cdkHeaderCellDef> No. </th>
+    <td cdk-cell *cdkCellDef="let item"> {{item.number}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="name">
+    <th cdk-header-cell *cdkHeaderCellDef> Name </th>
+    <td cdk-cell *cdkCellDef="let item"> {{item.name}} </td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="['number', 'name']"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: ['number', 'name'];"></tr>
+</table>
+</cdk-virtual-scroll-viewport>
